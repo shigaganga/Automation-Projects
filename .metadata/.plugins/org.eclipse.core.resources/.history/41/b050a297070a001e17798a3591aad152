@@ -1,0 +1,19 @@
+package Day3;
+
+import java.util.Arrays;
+
+public class SortArray {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+int a[]= {3,7,8,9,12,14,21};
+int sort[]=new int[7];
+Arrays.sort(a);
+
+System.out.println("sorted numeric array is:");
+String b[]= {"shiga","shaju", "arush","kanmani"};
+String sort2[]=new String[4];
+	}
+
+}
+

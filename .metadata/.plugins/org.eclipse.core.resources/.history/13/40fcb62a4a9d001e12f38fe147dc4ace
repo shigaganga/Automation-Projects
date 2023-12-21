@@ -1,0 +1,15 @@
+Feature:implementing Salesforce login 
+Scenario:salesforce login with clear password
+Given navigate to salesforcelogin
+When user logged in using username as "username" 
+And user clicked login button
+Then error message should be displayed
+Scenario:salesforce login with correct password and username as "username"
+Given navigate to salesforcelogin
+When user logged in using username as "username" and password as "password"
+And user clicked login button
+Then homepage should be displayed
+
+
+
+

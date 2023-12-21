@@ -1,0 +1,23 @@
+package Practise;
+
+import java.util.Scanner;
+
+public class Anagramchar {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+Scanner sc= new Scanner(System.in);
+System.out.println("Enter the first string");
+String str1=sc.nextLine();
+System.out.println("Enter the second string");
+String str2=sc.nextLine();
+//remove all white space
+String whitestr1 = str1.replaceAll("\\s", "");
+String whitestr2=str2.replaceAll("\\s", "");
+
+char chararray1[]=str1.toCharArray();
+char chararray2[]=str1.toCharArray();
+
+	}
+
+}

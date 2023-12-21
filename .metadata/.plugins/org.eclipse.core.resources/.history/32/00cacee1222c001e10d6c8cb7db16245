@@ -1,0 +1,41 @@
+package Practise;
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Anagramchar {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+Scanner sc= new Scanner(System.in);
+System.out.println("Enter the first string");
+String str1=sc.nextLine();
+System.out.println("Enter the second string");
+String str2=sc.nextLine();
+//remove all white space
+String whitestr1 = str1.replaceAll("\\s", "");
+String whitestr2=str2.replaceAll("\\s", "");
+boolean anagram=true;
+if(whitestr1.length()!=whitestr2.length()) {
+	anagram=false;
+}else {
+	//changing the string to lowercase and chararray
+	
+
+char chararray1[]=whitestr1.toLowerCase().toCharArray();
+char chararray2[]=whitestr2.toLowerCase().toCharArray();
+//sorting both array
+Arrays.sort(chararray1);
+Arrays.sort(chararray2);
+//checking both arrays equal(return true if it is equal
+anagram = Arrays.equals(chararray1, chararray2);
+    }
+	//output
+	if(anagram) {
+		System.out.println("The given two strings "+str1+ " and"+str2+" are anagram");
+	}else {
+		System.out.println("The given two strings "+str1+" and"+str2+"are not anagram");
+	}	
+	}}
+
+

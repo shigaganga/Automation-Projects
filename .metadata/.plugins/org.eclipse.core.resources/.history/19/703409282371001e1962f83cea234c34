@@ -1,0 +1,50 @@
+package com.tests.automation;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+public class SaleforceAutomation2 extends SalesforceBase
+{
+	public static void login_to_firebase() throws InterruptedException {
+		System.out.println("******_salesforce automation script started***********");
+		String expected="Please enter your password";
+		launchBrowser("firefox");
+		maximiseBrowser();
+		goToUrl("https://login.salesforce.com");
+		WebElement usernameEle = driver.findElement(By.id("username"));
+		waitForVisibility(usernameEle, 5, 2, "username textbox");
+		enterText(usernameEle,"shiga@tekarch.com","username textbox");
+		WebElement passwordEle = driver.findElement(By.id("password"));
+		enterText(passwordEle,"","password textbox");
+		WebElement buttonEle=driver.findElement(By.id("Login"));
+		clickElement(buttonEle,"login button");
+		String actual=getTextFromElement(buttonEle,"loginText");
+		
+		if(actual.equals(expected))
+			System.out.println("Pass:salesforce first testcase passed");
+		else {
+			System.out.println("Fail:salesforce first testcase failed");
+		closeBrowser();
+	
+	}}
+public static void rememberMe()throws InterruptedException{
+	System.out.println("***saleforce case2 rememberme*****");
+	launchBrowser("firefox");
+maximiseBrowser();
+goToUrl("https://login.salesforce.com");
+WebElement usernameEle = driver.findElement(By.id("username"));
+waitForVisibility(usernameEle, 5, 2, "username textbox");
+enterText(usernameEle,"shiga@tekarch.com","username textbox");
+WebElement passwordEle = driver.findElement(By.id("password"));
+enterText(passwordEle,"Arush@2013","password textbox");
+WebElement buttonEle=driver.findElement(By.id("Login"));
+clickElement(buttonEle,"login button");
+WebElement useId=driver.findElement(By.cssSelector(span[id='userNavLabel']"));
+
+}
+	public static void main(String[] args)throws InterruptedException {
+		//login_to_firebase();
+		
+		rememberMe();
+		}
+	}

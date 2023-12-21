@@ -1,0 +1,71 @@
+package com.tests.automation;
+
+import java.time.Duration;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+public class SaleforceAutomation2 extends SalesforceBase
+{
+	static WebDriverWait wait=null;
+	public static void login_to_firebase() throws InterruptedException {
+		System.out.println("******_salesforce automation script started***********");
+		String expected="Please enter your password";
+		launchBrowser("firefox");
+		maximiseBrowser();
+		goToUrl("https://login.salesforce.com");
+		WebElement usernameEle = driver.findElement(By.id("username"));
+		waitForVisibility(usernameEle, 5, 2, "username textbox");
+		enterText(usernameEle,"shiga@tekarch.com","username textbox");
+		WebElement passwordEle = driver.findElement(By.id("password"));
+		enterText(passwordEle,"","password textbox");
+		WebElement buttonEle=driver.findElement(By.id("Login"));
+		clickElement(buttonEle,"login button");
+		String actual=getTextFromElement(buttonEle,"loginText");
+		
+		if(actual.equals(expected))
+			System.out.println("Pass:salesforce first testcase passed");
+		else {
+			System.out.println("Fail:salesforce first testcase failed");
+		closeBrowser();
+	
+	}}
+public static void rememberMe()throws InterruptedException,StaleElementReferenceException{
+	System.out.println("***saleforce case2 rememberme*****");
+	launchBrowser("firefox");
+maximiseBrowser();
+goToUrl("https://login.salesforce.com");
+WebElement usernameEle = driver.findElement(By.id("username"));
+waitForVisibility(usernameEle, 5, 2, "username textbox");
+enterText(usernameEle,"shiga@tekarch.com","username textbox");
+WebElement passwordEle = driver.findElement(By.id("password"));
+enterText(passwordEle,"Arush@2013","password textbox");
+
+WebElement buttonEle=driver.findElement(By.id("Login"));
+clickElement(buttonEle,"login button");
+//Thread.sleep(5000);
+By locator = By.id("userNavLabel");
+ wait = new WebDriverWait(driver, Duration.ofSeconds(5000));
+ wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+WebElement userId=driver.findElement(By.xpath("//div[(@id='userNavButton')]/span[@id='userNavLabel']"));
+userId.click();
+waitForVisibility(userId, 5, 2,"move to");
+//WebElement useId=driver.findElement(By.xpath("//*[@id='userNavLabel']"));//*[@id="phSearchContainer"]
+//Actions action =new Actions(driver);
+//action.moveToElement(useId).build().perform();
+System.out.println("shiga abcd clicked");
+WebElement logoutlink=driver.findElement(By.linkText("Logout"));
+logoutlink.click();
+System.out.println("logout clicked");
+
+}
+	public static void main(String[] args)throws InterruptedException {
+		//login_to_firebase();
+		
+		rememberMe();
+		}
+	}

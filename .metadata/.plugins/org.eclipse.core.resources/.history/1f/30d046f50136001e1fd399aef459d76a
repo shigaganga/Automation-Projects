@@ -1,0 +1,29 @@
+package Assignment2;
+
+import java.util.Scanner;
+
+public class stringIndexOutofBoundException4 {
+	public String StringOutOfBond() {
+		System.out.println("Enter the string");
+
+		Scanner sc= new Scanner(System.in);
+		String str=sc.nextLine();
+		String substr;
+		try {
+		String	substr = str.substring(2, 8);
+			System.out.println(substr);
+			}
+			catch(StringIndexOutOfBoundsException ex) {
+				System.out.println("index not exist,please check the length of string"+ex);
+				
+		}
+		
+		return(substr);
+	}
+	public static void main(String[] args) {
+		stringIndexOutofBoundException4 obj=new stringIndexOutofBoundException4();
+		obj.StringOutOfBond();
+		
+	}
+
+}

@@ -1,0 +1,10 @@
+/**
+ * 
+ */
+/**
+ * @author shiga
+ *
+ */
+module JavaBasics {
+	requires org.apache.poi.poi;
+}

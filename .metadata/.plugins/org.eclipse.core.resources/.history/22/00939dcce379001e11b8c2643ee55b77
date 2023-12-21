@@ -1,0 +1,181 @@
+package Salesforce.Script;
+
+import java.util.Properties;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.testng.annotations.Test;
+
+import Salesforce.Base.SalesforceBaseTest;
+import Salesforce.Base.utility.PropertiesUtility;
+
+public class SalesforceScriptTestAccounts extends SalesforceBaseTest{
+	@Test
+	
+	public static void testcase10() throws InterruptedException {
+		System.out.println("******_salesforce automation CreateAccount11 started***********");
+		PropertiesUtility pro=new PropertiesUtility();
+		Properties appProp= pro.loadFile("applicationDataProperties");
+		String username=appProp.getProperty("login.valid.userid");
+		String password=appProp.getProperty("login.valid.password");
+		WebElement usernameEle = driver.findElement(By.id("username"));
+		waitForVisibility(usernameEle, 5, 2, "username textbox");
+		enterText(usernameEle,username,"username textbox");
+		WebElement passwordEle = driver.findElement(By.id("password"));
+		waitForVisibility(passwordEle, 5, 2, "password textbox");
+		enterText(passwordEle,password,"password textbox");
+		WebElement buttonEle=driver.findElement(By.id("Login"));
+		//waitForVisibility(buttonEle, 5, 2, "button textbox");
+		clickElement(buttonEle,"login button");
+		Thread.sleep(5000);
+	WebElement accounts=driver.findElement(By.xpath("//a[@href='/001/o']"));
+	waitForVisibility(accounts, 5, 2, "password textbox");
+	Thread.sleep(1000);
+	clickElement(accounts, "account area");
+	WebElement newEle=driver.findElement(By.xpath("//td[contains(@class,'pbButton')]//input[contains(@type,'button')]"));
+	waitForVisibility(newEle, 5, 2, "new textbox");
+	Thread.sleep(5000);
+	clickElement(newEle, "newButton box");
+	WebElement AccountName=driver.findElement(By.xpath("//input[@id='acc2']"));
+	String sendAccountname=appProp.getProperty("account.name");
+	enterText(AccountName, sendAccountname, "accounts");
+	waitForVisibility(AccountName, 5, 2, "accounttNametextbox");
+	Thread.sleep(5000);
+	WebElement dropdown=driver.findElement(By.xpath("	//select[@id='acc6']"));
+	Thread.sleep(3000);
+	selectByIndexData(dropdown, 6, "technologypartnervalue");
+	WebElement dropdown2=driver.findElement(By.xpath("//select[@id='00NHp00000blNWX']"));
+	Thread.sleep(3000);
+	selectByIndexData(dropdown2, 1, "priority");
+	System.out.println("New account page is displayed with acct details");
+
+	
+
+}
+@Test
+	
+	public static void testcase11() throws InterruptedException {
+		System.out.println("******_salesforce automation CreateAccount11 started***********");
+		PropertiesUtility pro=new PropertiesUtility();
+		Properties appProp= pro.loadFile("applicationDataProperties");
+		String username=appProp.getProperty("login.valid.userid");
+		String password=appProp.getProperty("login.valid.password");
+		WebElement usernameEle = driver.findElement(By.id("username"));
+		waitForVisibility(usernameEle, 5, 2, "username textbox");
+		enterText(usernameEle,username,"username textbox");
+		WebElement passwordEle = driver.findElement(By.id("password"));
+		waitForVisibility(passwordEle, 5, 2, "password textbox");
+		enterText(passwordEle,password,"password textbox");
+		WebElement buttonEle=driver.findElement(By.id("Login"));
+		//waitForVisibility(buttonEle, 5, 2, "button textbox");
+		clickElement(buttonEle,"login button");
+		Thread.sleep(5000);
+	WebElement accounts=driver.findElement(By.xpath("//a[@href='/001/o']"));
+	waitForVisibility(accounts, 5, 2, "password textbox");
+	Thread.sleep(1000);
+	clickElement(accounts, "account area");
+	WebElement EditNewview=driver.findElement(By.xpath("//a[contains(text(),'Create New View')]"));
+	Thread.sleep(2000);
+	clickElement(EditNewview, " view ");
+	WebElement viewnameEle=driver.findElement(By.xpath("//input[@id='fname']"));
+	Thread.sleep(2000);
+    viewnameEle.clear();
+	String viewname=appProp.getProperty("view.name");
+	enterText(viewnameEle, viewname, "viewname");
+	WebElement viewUniquename=driver.findElement(By.xpath("//input[@id='devname']"));
+	viewUniquename.clear();
+	Thread.sleep(2000);
+	String viewUniqe=appProp.getProperty("view.unique.name");
+	enterText(viewUniquename, viewUniqe, "viewUniqename");
+	WebElement save=driver.findElement(By.xpath("//body[@class='hasMotif accountTab filterEdit FilterEditPage sfdcBody brandQuaternaryBgr']/div[@id='contentWrapper']/div[@class='bodyDiv brdPalette brandPrimaryBrd']/table[@id='bodyTable']/tbody/tr/td[@id='bodyCell']/div[@class='bPageBlock brandSecondaryBrd bEditBlock secondaryPalette']/form[@id='editPage']/div[@class='pbBottomButtons']/table/tbody/tr/td[@class='pbButtonb']/input[1]"));
+	Thread.sleep(2000);
+	clickElement(save," saveclick")	;
+	System.out.println("newly added view list is displayed in account");
+}
+
+@Test
+	
+	public static void testcase12() throws InterruptedException {
+		System.out.println("******_salesforce automation CreateAccount11 started***********");
+		PropertiesUtility pro=new PropertiesUtility();
+		Properties appProp= pro.loadFile("applicationDataProperties");
+		String username=appProp.getProperty("login.valid.userid");
+		String password=appProp.getProperty("login.valid.password");
+		WebElement usernameEle = driver.findElement(By.id("username"));
+		waitForVisibility(usernameEle, 5, 2, "username textbox");
+		enterText(usernameEle,username,"username textbox");
+		WebElement passwordEle = driver.findElement(By.id("password"));
+		waitForVisibility(passwordEle, 5, 2, "password textbox");
+		enterText(passwordEle,password,"password textbox");
+		WebElement buttonEle=driver.findElement(By.id("Login"));
+		//waitForVisibility(buttonEle, 5, 2, "button textbox");
+		clickElement(buttonEle,"login button");
+		Thread.sleep(5000);
+	WebElement accounts=driver.findElement(By.xpath("//a[@href='/001/o']"));
+	waitForVisibility(accounts, 5, 2, "password textbox");
+	Thread.sleep(1000);
+	clickElement(accounts, "account area");
+	WebElement dropdown=driver.findElement(By.xpath("//select[@id='fcf']"));
+	selectByIndexData(dropdown, 3, "newview");
+	WebElement edit =driver.findElement(By.xpath("//a[@href='/ui/list/FilterEditPage?id=00BHp00000D0Y5L&retURL=%2F001&cancelURL=%2F001%2Fo']"));
+	clickElement(edit, "nameBox");
+	WebElement createnewview=driver.findElement(By.xpath("//a[contaiew')]"));
+	clickElement(createnewview, "create view ");
+	Thread.sleep(2000);
+	WebElement dropdown2=driver.findElement(By.xpath("//select[@id='fcol1']"));
+	selectByIndexData(dropdown2, 3, "accountname");
+	WebElement dropdown3=driver.findElement(By.xpath("//select[@id='fop1']"));
+	selectByIndexData(dropdown3, 3, "operator");
+	WebElement valueEle=driver.findElement(By.xpath("//select[@id='fop1']"));
+	String valueacc=appProp.getProperty("value.name");
+	enterText(valueEle, valueacc," value");
+	WebElement save=driver.findElement(By.xpath("//body[@class='hasMotif accountTab filterEdit FilterEditPage sfdcBody brandQuaternaryBgr']/div[@id='contentWrapper']/div[@class='bodyDiv brdPalette brandPrimaryBrd']/table[@id='bodyTable']/tbody/tr/td[@id='bodyCell']/div[@class='bPageBlock brandSecondaryBrd bEditBlock secondaryPalette']/form[@id='editPage']/div[@class='pbBottomButtons']/table/tbody/tr/td[@class='pbButtonb']/input[1]"));
+	clickElement(save," saveclick")	;
+	System.out.println("viewpage dispayed");
+}
+@Test
+
+public static void testcase13() throws InterruptedException {
+	System.out.println("******_salesforce automation CreateAccount11 started***********");
+	PropertiesUtility pro=new PropertiesUtility();
+	Properties appProp= pro.loadFile("applicationDataProperties");
+	String username=appProp.getProperty("login.valid.userid");
+	String password=appProp.getProperty("login.valid.password");
+	WebElement usernameEle = driver.findElement(By.id("username"));
+	waitForVisibility(usernameEle, 5, 2, "username textbox");
+	enterText(usernameEle,username,"username textbox");
+	WebElement passwordEle = driver.findElement(By.id("password"));
+	waitForVisibility(passwordEle, 5, 2, "password textbox");
+	enterText(passwordEle,password,"password textbox");
+	WebElement buttonEle=driver.findElement(By.id("Login"));
+	//waitForVisibility(buttonEle, 5, 2, "button textbox");
+	clickElement(buttonEle,"login button");
+	Thread.sleep(5000);
+WebElement accounts=driver.findElement(By.xpath("//a[@href='/001/o']"));
+waitForVisibility(accounts, 5, 2, "password textbox");
+Thread.sleep(1000);
+clickElement(accounts, "account area");
+}
+@Test
+
+public static void testcase14() throws InterruptedException {
+	System.out.println("******_salesforce automation CreateAccount11 started***********");
+	PropertiesUtility pro=new PropertiesUtility();
+	Properties appProp= pro.loadFile("applicationDataProperties");
+	String username=appProp.getProperty("login.valid.userid");
+	String password=appProp.getProperty("login.valid.password");
+	WebElement usernameEle = driver.findElement(By.id("username"));
+	waitForVisibility(usernameEle, 5, 2, "username textbox");
+	enterText(usernameEle,username,"username textbox");
+	WebElement passwordEle = driver.findElement(By.id("password"));
+	waitForVisibility(passwordEle, 5, 2, "password textbox");
+	enterText(passwordEle,password,"password textbox");
+	WebElement buttonEle=driver.findElement(By.id("Login"));
+	//waitForVisibility(buttonEle, 5, 2, "button textbox");
+	clickElement(buttonEle,"login button");
+	Thread.sleep(5000);
+WebElement accounts=driver.findElement(By.xpath("//a[@href='/001/o']"));
+waitForVisibility(accounts, 5, 2, "password textbox");
+Thread.sleep(1000);
+clickElement(accounts, "account area");
+}}

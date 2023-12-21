@@ -1,0 +1,11 @@
+20231112 09:40:20 INFO  [main] scripts.FirebaseAutomationScript FirebaseAutomationScript.java42 - ******invalid_login_to_firebase1 automation script started***********
+20231112 09:41:14 INFO  [main] scripts.FirebaseAutomationScript FirebaseAutomationScript.java19 - ******login_to_firebase automation script started***********
+20231112 09:49:38 INFO  [main] scripts.FirebaseAutomationScript FirebaseAutomationScript.java19 - ******login_to_firebase automation script started***********
+20231112 09:52:59 INFO  [main] scripts.FirebaseAutomationScript FirebaseAutomationScript.java19 - ******login_to_firebase automation script started***********
+20231112 09:55:07 INFO  [main] scripts.FirebaseAutomationScript FirebaseAutomationScript.java19 - ******login_to_firebase automation script started***********
+20231112 09:56:13 INFO  [main] scripts.FirebaseAutomationScript FirebaseAutomationScript.java19 - ******login_to_firebase automation script started***********
+20231112 09:56:13 INFO  [main] scripts.FirebaseAutomationScript FirebaseAutomationScript.java23 - ******user name***********
+20231112 09:57:31 INFO  [main] scripts.FirebaseAutomationScript FirebaseAutomationScript.java19 - ******login_to_firebase automation script started***********
+20231112 09:57:31 INFO  [main] scripts.FirebaseAutomationScript FirebaseAutomationScript.java23 - ******user name***********
+20231112 09:57:31 INFO  [main] scripts.FirebaseAutomationScript FirebaseAutomationScript.java27 - ******user name***********admin123@gmail.com
+20231112 09:57:31 INFO  [main] scripts.FirebaseAutomationScript FirebaseAutomationScript.java28 - ******password***********admin123

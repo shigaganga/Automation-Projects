@@ -1,0 +1,33 @@
+package Day3;
+
+import java.util.Arrays;
+
+public class RemoveArray {
+	static int remArr() {
+		int my_array[] = {25, 14, 56, 15, 36, 56, 77, 18, 29, 49};
+		   int index=1;
+		   int re_array[] = new int[my_array.length-1] ;
+for(int i=0;i<my_array.length;i++) {
+	if(index==i) {
+		continue;
+	}else {
+		 re_array[i]=  my_array[i];
+	}
+	
+	System.out.println(re_array.toString());
+	}
+return -1;
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+			remArr() ; 
+			   
+
+}
+
+			 }
+			 
+
+	
+

@@ -1,0 +1,142 @@
+package com.tests.automation;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class SalesforceAutomation  {
+	public static void login_SalesForceCase1() throws InterruptedException {
+
+		System.out.println("******login_to_salesForce automation testcase1 started***********");
+		
+WebDriver driver=new FirefoxDriver();
+
+driver.get("https://login.salesforce.com");
+Thread.sleep(2000);
+System.out.println("Salesforce application page is displayed");
+WebElement usernameEle = driver.findElement(By.id("username"));
+if (usernameEle.isDisplayed()) {
+	usernameEle.clear();
+	usernameEle.sendKeys("shiga@tekarch.com");
+	System.out.println("username is entered in the username field");
+} else {
+	System.out.println("username element is not displayed");
+	Thread.sleep(2000);
+}
+WebElement passwordEle = driver.findElement(By.id("password"));
+if(passwordEle.isDisplayed()) {
+passwordEle.clear();
+System.out.println("password field is clear");
+Thread.sleep(2000);
+	}
+WebElement buttonEle=driver.findElement(By.id("Login"));
+if(buttonEle.isEnabled()) {
+buttonEle.click();
+System.out.println("loginbutton is clicked");
+Thread.sleep(2000);
+String expected="Please enter your password.";
+
+WebElement error= driver.findElement(By.id("error"));
+String actual=error.getText();
+System.out.println("text is extracted from alert box: " +actual);
+Thread.sleep(2000);
+if(actual.equals(expected))
+	System.out.println("testcase passed");
+else {
+	System.out.println("testcase failed");
+}
+
+driver.close();
+}}
+public static void login_SalesForceCase2() throws InterruptedException {
+
+	System.out.println("******login_to_salesForce automation testcase2 started***********");
+	
+WebDriver driver=new FirefoxDriver();
+
+driver.get("https://login.salesforce.com");
+Thread.sleep(2000);
+System.out.println("Salesforce application page is displayed");
+WebElement usernameEle = driver.findElement(By.id("username"));
+if (usernameEle.isDisplayed()) {
+usernameEle.clear();
+usernameEle.sendKeys("shiga@tekarch.com");
+System.out.println("username is entered in the username field");
+} else {
+System.out.println("username element is not displayed");
+Thread.sleep(2000);
+}
+WebElement passwordEle = driver.findElement(By.id("password"));
+if(passwordEle.isDisplayed()) {
+passwordEle.clear();
+passwordEle.sendKeys("Arush@2013");
+System.out.println("password is entered in the username field");
+} else {
+System.out.println("password element is not displayed");
+Thread.sleep(2000);
+}
+WebElement rememberme=driver.findElement(By.xpath("//label[@class='fl pr db tn3']"));
+rememberme.click();
+System.out.println("Remember me clicked");
+Thread.sleep(2000);
+
+
+WebElement buttonEle=driver.findElement(By.id("Login"));
+if(buttonEle.isEnabled()) {
+buttonEle.click();
+System.out.println("loginbutton is clicked,saleforce home page displayed");
+}
+else {
+	System.out.println("button element is not enabled");
+}
+Thread.sleep(5000);
+
+WebElement widget=driver.findElement(By.xpath("//div[(@id='userNavButton')]/span[@id='userNavLabel']"));
+widget.click();
+Thread.sleep(3000);
+WebElement logoutlink=driver.findElement(By.linkText("Logout"));
+logoutlink.click();
+System.out.println("logout clicked");
+
+}
+public static void login_SalesForceCase3() throws InterruptedException {
+
+System.out.println("******login_to_salesForce automation testcase3 started***********");
+WebDriver driver=new FirefoxDriver();
+
+driver.get("https://login.salesforce.com");
+Thread.sleep(2000);
+System.out.println("Salesforce application page is displayed");
+WebElement usernameEle = driver.findElement(By.id("username"));
+if (usernameEle.isDisplayed()) {
+usernameEle.clear();
+usernameEle.sendKeys("shiga@tekarch.com");
+System.out.println("username is entered in the username field");
+} else {
+System.out.println("username element is not displayed");
+Thread.sleep(2000);
+}
+WebElement passwordEle = driver.findElement(By.id("password"));
+if(passwordEle.isDisplayed()) {
+passwordEle.clear();
+WebElement forgotPw=driver.findElement(By.xpath("//a[@id='forgot_password_link']"));
+forgotPw.click();
+Thread.sleep(3000);
+WebElement usenamePw=driver.findElement(By.xpath("//input[@id='un']"));
+usenamePw.click();
+Thread.sleep(3000);
+WebElement continueClick=driver.findElement(By.xpath("//input[@id='continue']"));
+continueClick.click();
+Thread.sleep(3000);
+
+}}
+public static void main(String[] args) throws InterruptedException{
+	//login_SalesForceCase1();
+	//login_SalesForceCase2();
+	login_SalesForceCase3();
+	
+	
+}}
